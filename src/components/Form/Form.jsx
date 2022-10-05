@@ -6,8 +6,24 @@ export const Form = () => {
     const [country, setCountry] = React.useState('');
     const [street, setStreet] = React.useState('');
     const [subject, setSubject] = React.useState('physical');
-
     const {tg} = useTelegram();
+
+    const onSendData = React.useCallback(() => {
+        const data = {
+            country,
+            street,
+            subject
+        };
+
+        tg.sendData(JSON.stringify(data));
+    }, [country, street, subject]);
+
+    React.useEffect(() => {
+        tg.WebApp.onEvent('mainButtonClicked', onSendData);
+        return () => {
+            tg.WebApp.offEvent('mainButtonClicked', onSendData);
+        }
+    }, []);
 
     React.useEffect(() => {
         tg.MainButton.setParams({
