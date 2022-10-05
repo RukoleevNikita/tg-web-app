@@ -29,7 +29,7 @@ export const Form = () => {
         tg.MainButton.setParams({
             text: 'Отправить данные'
         })
-    }, []);
+    }, [onSendData]);
 
 
     React.useEffect(() => {
