@@ -20,9 +20,32 @@ const getTotalPrice = (items = []) => { // суммирование цены
     }, 0)
 };
 
+
 export const ProductList = () => {
     const [addedItems, setAddedItems] = React.useState([]); // корзина
     const {tg, queryId} = useTelegram();
+
+    const onSendData = React.useCallback(() => {
+        const data = {
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
+        }
+        fetch('http://localhost:8000', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+    }, [addedItems])
+
+    React.useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
+    }, [onSendData])
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id); // найти товар в корзине
