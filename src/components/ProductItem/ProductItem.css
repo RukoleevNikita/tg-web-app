@@ -5,16 +5,18 @@
     border: 1px solid var(--tg-theme-button-color);
     padding: 15px;
     width: 170px;
+    color: #56392F;
 }
 
 
 .img {
     border-radius: 30px;
-    /* width: 100%; */
+    width: 100%;
     background: lightgray;
-    height: 200px;
+    height: 150px;
     margin: 0 auto;
     background: var(--tg-theme-button-color);
+    margin-bottom: 10px;
 }
 
 .description {
