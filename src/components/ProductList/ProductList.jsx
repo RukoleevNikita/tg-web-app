@@ -1,7 +1,8 @@
-import React from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
+import React, {useState} from 'react';
+import {useCallback, useEffect} from "react";
 
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -22,10 +23,26 @@ const getTotalPrice = (items = []) => { // суммирование цены
 
 
 export const ProductList = () => {
-    const [addedItems, setAddedItems] = React.useState([]); // корзина
+    const [addedItems, setAddedItems] = useState([]); // корзина
     const {tg, queryId} = useTelegram();
 
-    const onSendData = React.useCallback(() => {
+    // if (addedItems.length !== 0) {
+    //     const data = {
+    //         products: addedItems,
+    //         totalPrice: getTotalPrice(addedItems),
+    //         queryId,
+    //     }
+    //     fetch('http://localhost:8000/web-data', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(data)
+    //     })
+    // }
+
+    const onSendData = React.useEffect(() => {
+    // const onSendData = React.useCallback(() => { 
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
@@ -37,15 +54,18 @@ export const ProductList = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
-        })
-    }, [addedItems])
+        });
 
-    React.useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        console.log(data)
+    }, [addedItems]);
+
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData);
+
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
+            tg.offEvent('mainButtonClicked', onSendData);
         }
-    }, [onSendData])
+    }, [onSendData]);
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id); // найти товар в корзине
@@ -73,6 +93,7 @@ export const ProductList = () => {
         <div className={'list'}>
             {products.map(item => (
                 <ProductItem
+                    key={item.id}
                     product={item}
                     onAdd={onAdd}
                     className={'item'}

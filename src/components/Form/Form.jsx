@@ -6,7 +6,7 @@ export const Form = () => {
     const [country, setCountry] = React.useState('');
     const [street, setStreet] = React.useState('');
     const [subject, setSubject] = React.useState('physical');
-    const {tg} = useTelegram();
+    const { tg } = useTelegram();
 
     const onSendData = React.useCallback(() => {
         const data = {
@@ -16,20 +16,20 @@ export const Form = () => {
         };
 
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject]);
+    }, [tg, country, street, subject]);
 
     React.useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData);
         return () => {
             tg.offEvent('mainButtonClicked', onSendData);
         }
-    }, [onSendData]);
+    }, [tg, onSendData]);
 
     React.useEffect(() => {
         tg.MainButton.setParams({
             text: 'Отправить данные'
         })
-    }, []);
+    }, [tg]);
 
 
     React.useEffect(() => {
@@ -38,7 +38,7 @@ export const Form = () => {
         } else {
             tg.MainButton.show();
         }
-    }, [country, street]);
+    }, [tg, country, street]);
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
