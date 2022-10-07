@@ -10,9 +10,9 @@
 
 .img {
     border-radius: 30px;
-    width: 100%;
+    /* width: 100%; */
     background: lightgray;
-    height: 100px;
+    height: 200px;
     margin: 0 auto;
     background: var(--tg-theme-button-color);
 }
