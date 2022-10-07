@@ -5,7 +5,7 @@ import './ProductItem.css';
 const ProductItem = ({product, className, onAdd}) => {
     
     const onAddHandler = (e) => {
-        e.target.textContent === 'удалить из корзины' ? e.target.textContent = 'добавить в корзину' :  e.target.textContent = 'удалить из корзины'
+        e.target.textContent === 'удалить' ? e.target.textContent = 'добавить в корзину' :  e.target.textContent = 'удалить'
         onAdd(product);
     }
 
