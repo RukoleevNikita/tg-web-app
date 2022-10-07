@@ -13,7 +13,7 @@ const Header = () => {
         <div className={'header'}>
             <img src={logo} alt="" className={'logo'} />
             <span className={'username'}>
-                {user?.username}
+                Приветсвуем Вас {user?.username} в нашем интернет - магазине
             </span>
         </div>
     )
