@@ -24,6 +24,7 @@ const getTotalPrice = (items = []) => { // суммирование цены
 
 export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]); // корзина
+    const [click, setClick] = useState(false); // изменение кнопки
     const {tg, queryId} = useTelegram();
 
     // if (addedItems.length !== 0) {
@@ -81,7 +82,9 @@ export const ProductList = () => {
 
         if(newItems.length === 0) { // если товары из корзины удалены то кнопку скрыть
             tg.MainButton.hide();
+            setClick(false);
         } else { // иначе показать и подсчитать цену
+            setClick(true);
             tg.MainButton.show();
             tg.MainButton.setParams({
                 text: `Купить: ${getTotalPrice(newItems)}`
@@ -93,6 +96,7 @@ export const ProductList = () => {
         <div className={'list'}>
             {products.map(item => (
                 <ProductItem
+                    click={click}
                     key={item.id}
                     product={item}
                     onAdd={onAdd}

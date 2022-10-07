@@ -2,8 +2,8 @@ import React from 'react';
 import Button from "../Button/Button";
 import './ProductItem.css';
 
-const ProductItem = ({product, className, onAdd}) => {
-
+const ProductItem = ({product, className, onAdd, click}) => {
+    
     const onAddHandler = () => {
         onAdd(product);
     }
@@ -17,8 +17,11 @@ const ProductItem = ({product, className, onAdd}) => {
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
             <Button className={'add-btn'} onClick={onAddHandler}>
-                Добавить в корзину
+                { click ? 'удалить из корзины' : 'добавить в корзину' }
             </Button>
+                {/* <Button className={'add-btn'} onClick={onAddHandler}>
+                    Добавить в корзину
+                </Button> */}
         </div>
     );
 };
