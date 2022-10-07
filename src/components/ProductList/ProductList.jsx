@@ -3,6 +3,7 @@ import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
 import React, {useState} from 'react';
 import {useCallback, useEffect} from "react";
+import { useRef } from 'react';
 
 const products = [
     {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые'},
@@ -24,8 +25,8 @@ const getTotalPrice = (items = []) => { // суммирование цены
 
 export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]); // корзина
-    const [click, setClick] = useState(false); // изменение кнопки
     const {tg, queryId} = useTelegram();
+
 
     // if (addedItems.length !== 0) {
     //     const data = {
@@ -82,9 +83,7 @@ export const ProductList = () => {
 
         if(newItems.length === 0) { // если товары из корзины удалены то кнопку скрыть
             tg.MainButton.hide();
-            setClick(false);
         } else { // иначе показать и подсчитать цену
-            setClick(true);
             tg.MainButton.show();
             tg.MainButton.setParams({
                 text: `Купить: ${getTotalPrice(newItems)}`
@@ -96,7 +95,6 @@ export const ProductList = () => {
         <div className={'list'}>
             {products.map(item => (
                 <ProductItem
-                    click={click}
                     key={item.id}
                     product={item}
                     onAdd={onAdd}
