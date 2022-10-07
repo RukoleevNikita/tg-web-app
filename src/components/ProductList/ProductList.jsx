@@ -6,7 +6,7 @@ import {useCallback, useEffect} from "react";
 import { useRef } from 'react';
 
 const products = [
-    {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые'},
+    {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', url: '../src/assets/products/1_1.jpg'},
     {id: '2', title: 'Куртка', price: 3333, description: 'Зеленого цвета, теплая'},
     {id: '3', title: 'Джинсы 2', price: 111, description: 'Синего цвета, прямые'},
     {id: '4', title: 'Куртка 8', price: 1111, description: 'Зеленого цвета, теплая'},
