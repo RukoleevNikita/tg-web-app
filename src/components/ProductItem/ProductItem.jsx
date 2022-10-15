@@ -19,10 +19,10 @@ const ProductItem = ({product, className, onAdd}) => {
             {/* <div className={'img'}/> */}
             <img src={product.url} alt="" className={'img'} />
             <Link to={'https://jocular-babka-1414d8.netlify.app/product'} className={'title'}>{product.title}</Link>
-            <div className={'description'}>{product.description}</div>
-            <div className={'price'}>
+            {/* <div className={'description'}>{product.description}</div> */}
+            {/* <div className={'price'}>
                 <span>Стоимость: <b>{product.price}</b></span>
-            </div>
+            </div> */}
             <Button className={'add-btn'} onClick={(e) => {onAddHandler(e)}}>
                 добавить в корзину
             </Button>
