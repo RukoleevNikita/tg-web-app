@@ -27,6 +27,8 @@ export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]); // корзина
     const {tg, queryId} = useTelegram();
 
+    // console.log(window.Telegram.WebApp)
+
 
     // if (addedItems.length !== 0) {
     //     const data = {
