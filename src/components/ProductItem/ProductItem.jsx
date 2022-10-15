@@ -5,10 +5,10 @@ import './ProductItem.css';
 
 const ProductItem = ({product, className, onAdd}) => {
     
-    const onAddHandler = (e) => {
-        e.target.textContent === 'удалить' ? e.target.textContent = 'добавить в корзину' :  e.target.textContent = 'удалить'
-        onAdd(product);
-    }
+    // const onAddHandler = (e) => {
+    //     e.target.textContent === 'удалить' ? e.target.textContent = 'добавить в корзину' :  e.target.textContent = 'удалить'
+    //     onAdd(product);
+    // }
 
     // const redirect () {
 
@@ -23,9 +23,9 @@ const ProductItem = ({product, className, onAdd}) => {
             {/* <div className={'price'}>
                 <span>Стоимость: <b>{product.price}</b></span>
             </div> */}
-            <Button className={'add-btn'} onClick={(e) => {onAddHandler(e)}}>
+            {/* <Button className={'add-btn'} onClick={(e) => {onAddHandler(e)}}>
                 добавить в корзину
-            </Button>
+            </Button> */}
         </div>
     );
 };
