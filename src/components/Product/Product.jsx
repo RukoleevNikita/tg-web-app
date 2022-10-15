@@ -9,13 +9,17 @@ export const Product = ({ product, onAdd }) => {
 
     const onAddHandler = (e) => {
         e.target.textContent === 'удалить' ? e.target.textContent = 'добавить в корзину' :  e.target.textContent = 'удалить'
-        onAdd(product);
+        onAdd(product[0].urls);
     }
 
   return (
     <div className={'product'}>
         {/* <div className={'img'}/> */}
-        <img src={product[0].url} alt="" className={'img'} />
+        {
+            product[0].urls.map((el, i) => (
+                <img key={i} src={el} alt="" className={'img'} />
+            ))
+        }
         <div className={'title'}>{product[0].title}</div>
         <div className={'description'}>{product[0].description}</div>
         <div className={'price'}>

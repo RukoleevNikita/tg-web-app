@@ -21,7 +21,7 @@ const products = [
 ];
 
 const product = [
-  {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', url: 'http://localhost:8000/assets/products/1_1.jpg'},
+  {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', urls: ['http://localhost:8000/assets/products/1_1.jpg', 'http://localhost:8000/assets/products/1_2.jpg', 'http://localhost:8000/assets/products/1_3.jpg', 'http://localhost:8000/assets/products/1_4.jpg']},
 ];
 
 const getTotalPrice = (items = []) => { // суммирование цены

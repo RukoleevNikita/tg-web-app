@@ -6,6 +6,8 @@
     padding: 15px;
     width: 170px;
     color: #56392F;
+    border-radius: 30px;
+    align-items: center;
 }
 
 .img {
