@@ -14,6 +14,7 @@ import Form from './components/Form/Form';
 import { Product } from './components/Product/Product';
 
 import cls from './App.module.scss';
+import { Control } from './components/Control/Control';
 
 
 
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Control />
       <Routes>
         <Route index element={<ProductList products={products}/>}/>
         <Route path={'https://jocular-babka-1414d8.netlify.app/product'} element={<Product product={product} />} />
