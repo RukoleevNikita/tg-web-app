@@ -6,15 +6,22 @@
     padding: 15px;
     width: 170px;
     color: #56392F;
-    border-radius: 30px;
+    border-radius: 10px;
     align-items: center;
+
+    &__navBlock {
+        width: 100%;
+        img {
+            cursor: pointer;
+        }
+    }
 }
 
 .img {
-    border-radius: 30px;
+    border-radius: 10px;
     width: 100%;
     background: lightgray;
-    height: 150px;
+    height: 170px;
     margin: 0 auto;
     background: var(--tg-theme-button-color);
     margin-bottom: 10px;
@@ -22,13 +29,4 @@
 
 .description {
     font-size: 0.8em;
-}
-
-.add-btn {
-    width: 100%;
-}
-
-.imgProduct {
-    cursor: pointer;
-    
 }

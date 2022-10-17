@@ -1,33 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from "../Button/Button";
-import './ProductItem.css';
+
+import Button from '../Button/Button';
+
+import cls from './ProductItem.module.scss';
 
 const ProductItem = ({product, className, onAdd}) => {
-    
-    // const onAddHandler = (e) => {
-    //     e.target.textContent === 'удалить' ? e.target.textContent = 'добавить в корзину' :  e.target.textContent = 'удалить'
-    //     onAdd(product);
-    // }
 
-    // const redirect () {
-
-    // }
-
-    return (
-        <div className={'product ' + className}>
-            {/* <div className={'img'}/> */}
-            <img src={product.url} alt="" className={'img'} />
-            <Link to={'https://jocular-babka-1414d8.netlify.app/product'} className={'title'}>{product.title}</Link>
-            {/* <div className={'description'}>{product.description}</div> */}
-            {/* <div className={'price'}>
-                <span>Стоимость: <b>{product.price}</b></span>
-            </div> */}
-            {/* <Button className={'add-btn'} onClick={(e) => {onAddHandler(e)}}>
-                добавить в корзину
-            </Button> */}
+  return (
+    <>
+      <Link to={'https://jocular-babka-1414d8.netlify.app/product'} className={cls.product}>
+        <div>
+          <img src={product.url} alt="" className={cls.img} />
+          <div className={cls.title}>{product.title}</div>
         </div>
-    );
+      </Link>
+    </>
+  );
 };
 
 export default ProductItem;
