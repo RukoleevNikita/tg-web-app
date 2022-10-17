@@ -5,11 +5,6 @@ import styles from './Categories.module.scss';
 export const Categories = ({ eventHandler, activeIndex = 0 }) => {
   
   const CATEGORIES = ['Все товары', '1 сентября/учителю', 'Мужские букеты', 'Букеты', 'Ореховые/ сухофруктов букеты', 'Клубника в шоколаде в коробочке', 'Клубничные букеты', 'Букеты из шоколадных цветов', 'Подарки для детей', 'Шары и композиции'];
-
-  // const eventHandler = (i) => {
-  //   console.log(i);
-  //   setActiveIndex(i);
-  // };
     
   return (
     <ul className={styles.category__navigation}>
