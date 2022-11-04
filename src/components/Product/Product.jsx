@@ -77,6 +77,8 @@ export const Product = ({ product }) => {
     <div className={cls.product}>
       <div className={cls.product__navBlock}>
         <img src={back} alt="" className={cls.imgProduct} onClick={() => navigate(-1)}/>
+        <div className={cls.title}>{product.title}</div>
+
       </div>
       <div className={cls.wrapper}>
         <Carousel>

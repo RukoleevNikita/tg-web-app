@@ -14,7 +14,6 @@ export const ProductParameters = ({ product, onAdd }) => {
 
   return (
     <div>
-      <div className={cls.title}>{product.title}</div>
       <div className={cls.description}>{product.description}</div>
       <div className={cls.price}>
         <span>Стоимость: <b>{product.price}</b></span>

@@ -7,7 +7,7 @@ export const Carousel = ({children}) => {
   const [pages, setPages] = React.useState([]);
   const [offSet, setOffSet] = React.useState(0);
 
-  const PAGE_WIDTH = 173;
+  const PAGE_WIDTH = 225;
 
   React.useEffect(() => {
     setPages(
