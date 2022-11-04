@@ -14,7 +14,7 @@ import Form from './components/Form/Form';
 import { Product } from './components/Product/Product';
 
 import cls from './App.module.scss';
-import { Control } from './components/Control/Control';
+
 
 
 
@@ -34,18 +34,14 @@ const products = [
 // ];
 
 function App() {
-  const [show, setShow] = React.useState(false);
-  
-  const test = (event) => {
-    setShow(!event);
-  };
+
 
   return (
     <div className="App">
       <Header />
-      <Control event={test}/>
+      
       <Routes>
-        <Route index element={<ProductList products={products} show={show} /> }/>
+        <Route index element={<ProductList products={products} /> }/>
         <Route path={'https://jocular-babka-1414d8.netlify.app/product'} element={<Product product={products[0]} />} />
         <Route path={'form'} element={<Form />}/>
       </Routes>

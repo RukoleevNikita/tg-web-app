@@ -16,7 +16,6 @@ import cls from './Product.module.scss';
 
 
 export const Product = ({ product }) => {
-  console.log(product);
   const navigate = useNavigate();
   const [addedItems, setAddedItems] = React.useState([]);
   const {tg, queryId} = useTelegram();
