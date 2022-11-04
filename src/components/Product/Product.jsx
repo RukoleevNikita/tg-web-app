@@ -37,7 +37,7 @@ export const Product = ({ product }) => {
       body: JSON.stringify(data)
     });
 
-    console.log(data);
+    // console.log(data);
   }, [addedItems]);
 
   React.useEffect(() => {

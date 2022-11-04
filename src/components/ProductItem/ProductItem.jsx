@@ -12,7 +12,8 @@ const ProductItem = ({product, className, onAdd}) => {
       <Link to={'https://jocular-babka-1414d8.netlify.app/product'} className={cls.product}>
         <div>
           <img src={product.url} alt="" className={cls.img} />
-          <div className={cls.title}>{product.title}</div>
+          {/* <div className={cls.title}>{product.title}</div> */}
+          <div className={cls.title}>asfljkghaf</div>
         </div>
       </Link>
     </>

@@ -34,12 +34,19 @@ const product = [
 ];
 
 function App() {
+  const [show, setShow] = React.useState(false);
+  
+  const test = (event) => {
+    setShow(!event);
+  };
+  console.log(show);
+
   return (
     <div className="App">
       <Header />
-      <Control />
+      <Control event={test}/>
       <Routes>
-        <Route index element={<ProductList products={products}/>}/>
+        <Route index element={<ProductList products={products} show={show} /> }/>
         <Route path={'https://jocular-babka-1414d8.netlify.app/product'} element={<Product product={product} />} />
         <Route path={'form'} element={<Form />}/>
       </Routes>
