@@ -1,6 +1,6 @@
 .container {
     height: 100%;
-    width: 127px;
+    width: 173px;
     display: flex;
     align-items: center;
     position: relative;
@@ -13,6 +13,10 @@
 }
 
 .items {
+    img {
+        height: 230px;
+    }
+
     height: 100%;   
     display: flex;
     transition: translate;
