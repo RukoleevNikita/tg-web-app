@@ -10,10 +10,13 @@ import { ProductParameters } from '../ProductParameters/ProductParameters';
 
 import { getTotalPrice } from '../../utils/utils';
 
+import { Carousel } from '../Carousel/Carousel';
+
 import cls from './Product.module.scss';
 
 
 export const Product = ({ product }) => {
+  console.log(product);
   const navigate = useNavigate();
   const [addedItems, setAddedItems] = React.useState([]);
   const {tg, queryId} = useTelegram();
@@ -75,14 +78,20 @@ export const Product = ({ product }) => {
       <div className={cls.product__navBlock}>
         <img src={back} alt="" className={cls.imgProduct} onClick={() => navigate(-1)}/>
       </div>
-      <div>
-        {
-          product[0].urls.map((el, i) => (
+      <div className={cls.wrapper}>
+        <Carousel>
+          {product.imagesUrls.map((el, i) => (<img key={i} src={el} alt="" className={cls.img} /> ))}
+        </Carousel>
+         
+        
+      </div>
+      {/* {
+          product.imagesUrls.map((el, i) => (
             <img key={i} src={el} alt="" className={cls.img} />
           ))
-        }
-        <ProductParameters product={product} onAdd={onAdd} />
-      </div>
+        } */}
+      <ProductParameters product={product} onAdd={onAdd} />
+      
     </div>
   );
 };

@@ -20,7 +20,7 @@
 
 .img {
     border-radius: 10px;
-    width: 100%;
+    // width: 100%;
     background: lightgray;
     height: 170px;
     margin: 0 auto;
@@ -30,4 +30,9 @@
 
 .description {
     font-size: 0.8em;
+}
+
+
+.wrapper {
+    display: flex;
 }

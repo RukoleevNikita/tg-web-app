@@ -19,19 +19,19 @@ import { Control } from './components/Control/Control';
 
 
 const products = [
-  {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', url: 'http://localhost:8000/assets/products/1_1.jpg'},
-  {id: '2', title: 'Куртка', price: 3333, description: 'Зеленого цвета, теплая', url: 'http://localhost:8000/assets/products/3_1.jpg'},
-  {id: '3', title: 'Джинсы 2', price: 111, description: 'Синего цвета, прямые', url: 'http://localhost:8000/assets/products/4_1.jpg'},
-  {id: '4', title: 'Куртка 8', price: 1111, description: 'Зеленого цвета, теплая', url: 'http://localhost:8000/assets/products/5_1.jpg'},
-  {id: '5', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые', url: 'http://localhost:8000/assets/products/6_1.jpg'},
-  {id: '6', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая', url: 'http://localhost:8000/assets/products/7_1.jpg'},
-  {id: '7', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые', url: 'http://localhost:8000/assets/products/8_1.jpg'},
+  {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', preview: 'http://localhost:8000/assets/products/1_1.jpg', imagesUrls: ['http://localhost:8000/assets/products/1_1.jpg', 'http://localhost:8000/assets/products/1_2.jpg', 'http://localhost:8000/assets/products/1_3.jpg', 'http://localhost:8000/assets/products/1_4.jpg']},
+  {id: '2', title: 'Куртка', price: 3333, description: 'Зеленого цвета, теплая', preview: 'http://localhost:8000/assets/products/3_1.jpg'},
+  {id: '3', title: 'Джинсы 2', price: 111, description: 'Синего цвета, прямые', preview: 'http://localhost:8000/assets/products/4_1.jpg'},
+  {id: '4', title: 'Куртка 8', price: 1111, description: 'Зеленого цвета, теплая', preview: 'http://localhost:8000/assets/products/5_1.jpg'},
+  {id: '5', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые', preview: 'http://localhost:8000/assets/products/6_1.jpg'},
+  {id: '6', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая', preview: 'http://localhost:8000/assets/products/7_1.jpg'},
+  {id: '7', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые', preview: 'http://localhost:8000/assets/products/8_1.jpg'},
   // {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая', url: 'http://localhost:8000/assets/products/9_1.jpg'},
 ];
 
-const product = [
-  {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', urls: ['http://localhost:8000/assets/products/1_1.jpg', 'http://localhost:8000/assets/products/1_2.jpg', 'http://localhost:8000/assets/products/1_3.jpg', 'http://localhost:8000/assets/products/1_4.jpg']},
-];
+// const product = [
+//   {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', urls: ['http://localhost:8000/assets/products/1_1.jpg', 'http://localhost:8000/assets/products/1_2.jpg', 'http://localhost:8000/assets/products/1_3.jpg', 'http://localhost:8000/assets/products/1_4.jpg']},
+// ];
 
 function App() {
   const [show, setShow] = React.useState(false);
@@ -39,7 +39,6 @@ function App() {
   const test = (event) => {
     setShow(!event);
   };
-  console.log(show);
 
   return (
     <div className="App">
@@ -47,7 +46,7 @@ function App() {
       <Control event={test}/>
       <Routes>
         <Route index element={<ProductList products={products} show={show} /> }/>
-        <Route path={'https://jocular-babka-1414d8.netlify.app/product'} element={<Product product={product} />} />
+        <Route path={'https://jocular-babka-1414d8.netlify.app/product'} element={<Product product={products[0]} />} />
         <Route path={'form'} element={<Form />}/>
       </Routes>
     </div>
