@@ -4,9 +4,22 @@ import ProductItem from '../ProductItem/ProductItem';
 
 import { Control } from '../Control/Control';
 
+import { Scrollable } from '../Scrollable/Scrollable';
+
 import cls from './ProductList.module.scss';
 
-
+const categories = [
+  {title: 'Все товары'},
+  {title: '1 сентября/учителю'},
+  {title: 'Мужские букеты'},
+  {title: 'Букеты'},
+  {title: 'Ореховые/ сухофруктов букеты'},
+  {title: 'Клубника в шоколаде в коробочке'},
+  {title: 'Клубничные букеты'},
+  {title: 'Букеты из шоколадных цветов'},
+  {title: 'Подарки для детей'},
+  {title: 'Шары и композиции'},
+];
 
 export const ProductList = ({ products }) => {
 
@@ -18,7 +31,19 @@ export const ProductList = ({ products }) => {
 
   return (
     <>
-      <Control event={test}/>
+      {/* <Control event={test}/> */}
+      <div className={cls.container}>
+        <Scrollable _class="items">
+          {
+            categories.map((category, i) => (
+              <div key={i} className={cls.item}>
+                <h2>{category.title}</h2>
+                <p>{category.text}</p>
+              </div>
+            ))
+          }
+        </Scrollable>
+      </div>
       {
         !show && <div className={cls.list}>
           {products.map(item => (

@@ -15,9 +15,6 @@ import { Product } from './components/Product/Product';
 
 import cls from './App.module.scss';
 
-
-
-
 const products = [
   {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', preview: 'http://localhost:8000/assets/products/1_1.jpg', imagesUrls: ['http://localhost:8000/assets/products/1_1.jpg', 'http://localhost:8000/assets/products/1_2.jpg', 'http://localhost:8000/assets/products/1_3.jpg', 'http://localhost:8000/assets/products/1_4.jpg']},
   {id: '2', title: 'Куртка', price: 3333, description: 'Зеленого цвета, теплая', preview: 'http://localhost:8000/assets/products/3_1.jpg'},
@@ -28,10 +25,6 @@ const products = [
   {id: '7', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые', preview: 'http://localhost:8000/assets/products/8_1.jpg'},
   // {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая', url: 'http://localhost:8000/assets/products/9_1.jpg'},
 ];
-
-// const product = [
-//   {id: '1', title: 'Джинсы', price: 222, description: 'Синего цвета, прямые', urls: ['http://localhost:8000/assets/products/1_1.jpg', 'http://localhost:8000/assets/products/1_2.jpg', 'http://localhost:8000/assets/products/1_3.jpg', 'http://localhost:8000/assets/products/1_4.jpg']},
-// ];
 
 function App() {
 

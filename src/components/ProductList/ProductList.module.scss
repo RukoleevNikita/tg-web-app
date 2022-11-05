@@ -9,3 +9,9 @@
     margin-bottom: 10px;
     border-radius: 30px;
 }
+
+.container {
+    max-width: 600px; // изменить параметр
+    overflow-x: scroll;
+    margin: auto;
+}
