@@ -10,7 +10,7 @@ import cls from './ProductList.module.scss';
 
 const categories = [
   {title: 'Все товары'},
-  {title: '1 сентября/учителю'},
+  {title: 'Учителю'},
   {title: 'Мужские букеты'},
   {title: 'Букеты'},
   {title: 'Ореховые букеты'},
