@@ -4,9 +4,12 @@
         border-radius: 20px;
         color: #56392F;
         background-color: white;
-        width: 250px;
+        // width: 250px;
         padding: 10px;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     display: flex;
     flex-direction: row;

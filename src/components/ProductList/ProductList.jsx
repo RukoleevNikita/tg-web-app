@@ -14,7 +14,7 @@ const categories = [
   {title: 'Мужские букеты'},
   {title: 'Букеты'},
   {title: 'Ореховые букеты'},
-  {title: 'Клубника в шоколаде в коробочке'},
+  {title: 'Клубника в шоколаде'},
   {title: 'Клубничные букеты'},
   {title: 'Букеты из шоколадных цветов'},
   {title: 'Подарки для детей'},
@@ -37,7 +37,7 @@ export const ProductList = ({ products }) => {
           {
             categories.map((category, i) => (
               <div key={i} className={cls.item}>
-                <h4>{category.title}</h4>
+                <p>{category.title}</p>
               </div>
             ))
           }
