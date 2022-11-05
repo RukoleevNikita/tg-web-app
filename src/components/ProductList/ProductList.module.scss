@@ -11,7 +11,8 @@
 }
 
 .container {
-    max-width: 600px; // изменить параметр
+    // max-width: 600px; // изменить параметр
+    width: 100%;
     overflow-x: scroll;
     margin: auto;
 }
