@@ -9,7 +9,7 @@ import { Scrollable } from '../Scrollable/Scrollable';
 import cls from './ProductList.module.scss';
 
 const categories = [
-  {title: 'Все товары'},
+  {title: 'Все'},
   {title: 'Учителю'},
   {title: 'Мужские букеты'},
   {title: 'Букеты'},
