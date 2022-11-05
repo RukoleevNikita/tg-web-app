@@ -1,38 +1,60 @@
-.container {
-    height: 100%;
-    width: 225px;
-    display: flex;
-    align-items: center;
-    position: relative;
+.item {
+    min-height: 40rem;
+    min-width: 33%;
+    padding: 40px;
 }
 
-.window {
-    height: 100%;
+.item img {
     width: 100%;
-    overflow: hidden;
+    height: 100%;
+    border-radius: 2rem;
+    pointer-events: none;
 }
 
-.items {
-    img {
-        height: 300px;
-    }
-
-    height: 100%;   
+.innerCarousel {
     display: flex;
-    transition: translate;
-    transition-property: transform;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out;
 }
 
-.arrowLeft {
-    z-index: 1;
-    position: absolute;
-    cursor: pointer;
+.carousel {
+    overflow: hidden;
+    cursor: grab;
+    margin: 0 20%;
 }
+// .container {
+//     height: 100%;
+//     width: 225px;
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+// }
 
-.arrowRight {
-    right: 0;
-    position: absolute;
-    cursor: pointer;
-}
+// .window {
+//     height: 100%;
+//     width: 100%;
+//     overflow: hidden;
+// } 
+
+// .items {
+//     img {
+//         height: 300px;
+//     }
+
+//     height: 100%;   
+//     display: flex;
+//     transition: translate;
+//     transition-property: transform;
+//     transition-duration: 300ms;
+//     transition-timing-function: ease-in-out;
+// }
+
+// .arrowLeft {
+//     z-index: 1;
+//     position: absolute;
+//     cursor: pointer;
+// }
+
+// .arrowRight {
+//     right: 0;
+//     position: absolute;
+//     cursor: pointer;
+// }
