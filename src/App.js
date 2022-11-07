@@ -30,7 +30,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className={cls.App}>
       <Header />
       
       <Routes>

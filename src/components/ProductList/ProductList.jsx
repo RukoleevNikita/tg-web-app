@@ -32,17 +32,17 @@ export const ProductList = ({ products }) => {
   return (
     <>
       {/* <Control event={test}/> */}
-      <div className={cls.container}>
-        <Scrollable _class="items">
-          {
-            categories.map((category, i) => (
-              <div key={i} className={cls.item}>
-                {category.title}
-              </div>
-            ))
-          }
-        </Scrollable>
-      </div>
+      {/* <div className={cls.container}> */}
+      <Scrollable _class="items">
+        {
+          categories.map((category, i) => (
+            <div key={i} className={cls.item}>
+              {category.title}
+            </div>
+          ))
+        }
+      </Scrollable>
+      {/* </div> */}
       {
         !show && <div className={cls.list}>
           {products.map(item => (
