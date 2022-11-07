@@ -1,7 +1,7 @@
 .list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    // flex-wrap: wrap;
+    // justify-content: center;
 }
 
 .item {
@@ -11,7 +11,7 @@
 }
 
 .container {
-    max-width: 600px; // изменить параметр
+    width: 100vw; // изменить параметр
     // width: 100%;
     overflow-x: scroll;
     margin: auto;

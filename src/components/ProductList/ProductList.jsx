@@ -37,7 +37,7 @@ export const ProductList = ({ products }) => {
           {
             categories.map((category, i) => (
               <div key={i} className={cls.item}>
-                <p>{category.title}</p>
+                {category.title}
               </div>
             ))
           }
