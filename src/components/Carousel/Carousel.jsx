@@ -7,36 +7,36 @@ export const Carousel = ({product}) => {
   const [width, setWidth] = React.useState(0);
   const carousel = React.useRef();
   // export const Carousel = ({children}) => {
-  //   const [pages, setPages] = React.useState([]);
-  //   const [offSet, setOffSet] = React.useState(0);
+  const [pages, setPages] = React.useState([]);
+  const [offSet, setOffSet] = React.useState(0);
 
-  //   const PAGE_WIDTH = 225;
+  const PAGE_WIDTH = 225;
 
   React.useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
 
-  //   const handleLeftArrowClick = () => {
-  //     console.log('handleLeftArrowClick');
-  //     // if (offSet === 0) setOffSet(-381);
-  //     setOffSet((currentOffset) => {
-  //       const newOffset = currentOffset + PAGE_WIDTH;
+  const handleLeftArrowClick = () => {
+    console.log('handleLeftArrowClick');
+    // if (offSet === 0) setOffSet(-381);
+    setOffSet((currentOffset) => {
+      const newOffset = currentOffset + PAGE_WIDTH;
 
-  //       return Math.min(newOffset, 0); 
-  //     });
-  //   };
+      return Math.min(newOffset, 0); 
+    });
+  };
 
-  //   const handleRightArrowClick = () => {
-  //     console.log('handleRightArrowClick');
-  //     // if (offSet === -381) setOffSet(0);
-  //     setOffSet((currentOffset) => {
-  //       const newOffset = currentOffset - PAGE_WIDTH;
+  const handleRightArrowClick = () => {
+    console.log('handleRightArrowClick');
+    // if (offSet === -381) setOffSet(0);
+    setOffSet((currentOffset) => {
+      const newOffset = currentOffset - PAGE_WIDTH;
 
-  //       const maxOffset = -(PAGE_WIDTH * (pages.length - 1));
+      const maxOffset = -(PAGE_WIDTH * (pages.length - 1));
 
-  //       return Math.max(newOffset, maxOffset); 
-  //     });
-  //   };
+      return Math.max(newOffset, maxOffset); 
+    });
+  };
 
   return (
     <div className={cls.container}>

@@ -80,7 +80,7 @@ export const Product = ({ product }) => {
 
       </div>
       <div className={cls.wrapper}>
-        <Carousel product={product.imagesUrls} />
+        {/* <Carousel product={product.imagesUrls} /> */}
           
         {/* <Carousel>
           {product.imagesUrls.map((el, i) => (<img key={i} src={el} alt="" className={cls.img} /> ))}
@@ -88,11 +88,11 @@ export const Product = ({ product }) => {
          
         
       </div>
-      {/* {
-          product.imagesUrls.map((el, i) => (
-            <img key={i} src={el} alt="" className={cls.img} />
-          ))
-        } */}
+      {
+        product.imagesUrls.map((el, i) => (
+          <img key={i} src={el} alt="" className={cls.img} />
+        ))
+      }
       <ProductParameters product={product} onAdd={onAdd} />
       
     </div>

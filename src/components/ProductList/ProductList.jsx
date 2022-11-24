@@ -31,9 +31,9 @@ export const ProductList = ({ products }) => {
 
   return (
     <>
-      {/* <Control event={test}/> */}
+      <Control event={test}/>
       {/* <div className={cls.container}> */}
-      <Scrollable _class="items">
+      {/* <Scrollable _class="items">
         {
           categories.map((category, i) => (
             <div key={i} className={cls.item}>
@@ -41,7 +41,7 @@ export const ProductList = ({ products }) => {
             </div>
           ))
         }
-      </Scrollable>
+      </Scrollable> */}
       {/* </div> */}
       {
         !show && <div className={cls.list}>
